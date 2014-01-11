@@ -21,5 +21,5 @@ WORKDIR /redis
 EXPOSE 6379
 
 # Turn this container into an executable.
-ENTRYPOINT ["/redis/src/redis-server"]
+ENTRYPOINT ["redis-server"]
 CMD ["-h"]
