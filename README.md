@@ -26,4 +26,4 @@ This repository contains **Dockerfile** of [Redis](http://redis.io/) for [Docker
 
 #### Run `redis-cli`
 
-    docker run -entrypoint="redis-cli" dockerfile/redis
+    docker run -i -rm -t -entrypoint="redis-cli" dockerfile/redis
