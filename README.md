@@ -24,7 +24,7 @@ This repository contains **Dockerfile** of [Redis](http://redis.io/) for [Docker
 
 #### Run `redis-server`
 
-    docker run dockerfile/redis redis-server
+    docker run dockerfile/redis redis-server --dir /redis
 
 (Alternatively, use [dockerfile/redis-server](https://github.com/dockerfile/redis-server) executable image.)
 
