@@ -15,7 +15,7 @@ This repository contains **Dockerfile** of [Redis](http://redis.io/) for [Docker
 
 2. Download [trusted build](https://index.docker.io/u/dockerfile/redis/) from public [Docker Registry](https://index.docker.io/): `docker pull dockerfile/redis`
 
-   (alternatively, you can build an image from Dockerfile: `docker build -t="dockerfile/redis" .`)
+   (alternatively, you can build an image from Dockerfile: `docker build -t="dockerfile/redis" github.com/dockerfile/redis`)
 
 
 ### Usage
