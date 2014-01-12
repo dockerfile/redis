@@ -22,7 +22,7 @@ This repository contains **Dockerfile** of [Redis](http://redis.io/) for [Docker
 
 #### Run `redis-server`
 
-    docker run -p 6379:6379 dockerfile/redis
+    docker run -d -p 6379:6379 dockerfile/redis
 
 #### Run `redis-cli`
 
