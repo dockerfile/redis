@@ -6,7 +6,7 @@ This repository contains **Dockerfile** of [Redis](http://redis.io/) for [Docker
 
 ### Dependencies
 
-* [dockerfile/ubuntu](https://github.com/dockerfile/ubuntu)
+* [dockerfile/ubuntu](http://dockerfile.github.io/#/ubuntu)
 
 
 ### Installation
