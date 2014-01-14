@@ -22,8 +22,8 @@ This repository contains **Dockerfile** of [Redis](http://redis.io/) for [Docker
 
 #### Run `redis-server`
 
-    docker run -d -p 6379:6379 dockerfile/redis
+    docker run -d -name redis -p 6379:6379 dockerfile/redis
 
 #### Run `redis-cli`
 
-    docker run -i -rm -t -entrypoint="redis-cli" dockerfile/redis
+    docker run -i -rm -t -entrypoint="bash" -link redis:redis dockerfile/redis -c 'redis-cli -h $REDIS_PORT_6379_TCP_ADDR'
