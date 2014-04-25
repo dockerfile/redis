@@ -15,5 +15,9 @@ RUN apt-get install -y redis-server
 # Expose ports.
 EXPOSE 6379
 
+# Define mountable data directory.
+VOLUME ["/data"]
+WORKDIR /data
+
 # Define an entry point.
 ENTRYPOINT ["redis-server"]
