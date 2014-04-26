@@ -16,7 +16,7 @@ RUN apt-get install -y redis-server
 VOLUME ["/data"]
 
 # Define working directory.
-WORKDIR "/data"
+WORKDIR /data
 
 # Define default command.
 ENTRYPOINT ["redis-server"]
