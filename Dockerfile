@@ -8,15 +8,17 @@
 FROM dockerfile/ubuntu
 
 # Install Redis.
-RUN add-apt-repository -y ppa:chris-lea/redis-server
-RUN apt-get update
-RUN apt-get install -y redis-server
+RUN cd /tmp && wget http://download.redis.io/redis-stable.tar.gz
+RUN cd /tmp && tar xvzf redis-stable.tar.gz
+RUN cd /tmp/redis-stable && make && make install
+RUN cp -f /tmp/redis-stable/src/redis-sentinel /usr/local/bin
+RUN mkdir -p /etc/redis
+RUN cp -f /tmp/redis-stable/*.conf /etc/redis
+RUN rm -rf /tmp/redis-stable*
 RUN sed -i 's/^\(bind .*\)$/# \1/' /etc/redis/redis.conf
 RUN sed -i 's/^\(daemonize .*\)$/# \1/' /etc/redis/redis.conf
 RUN sed -i 's/^\(dir .*\)$/# \1\ndir \/data/' /etc/redis/redis.conf
 RUN sed -i 's/^\(logfile .*\)$/# \1/' /etc/redis/redis.conf
-RUN echo 'vm.overcommit_memory = 1' >> /etc/sysctl.conf
-RUN sysctl vm.overcommit_memory=1
 
 # Define mountable directories.
 VOLUME ["/data"]
