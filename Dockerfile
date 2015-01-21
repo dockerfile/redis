@@ -14,6 +14,7 @@ RUN \
   tar xvzf redis-stable.tar.gz && \
   cd redis-stable && \
   make && \
+  make test && \
   make install && \
   cp -f src/redis-sentinel /usr/local/bin && \
   mkdir -p /etc/redis && \
