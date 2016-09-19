@@ -5,7 +5,12 @@
 #
 
 # Pull base image.
-FROM dockerfile/ubuntu
+FROM ubuntu
+
+# Install dependencies
+RUN apt-get update && \
+  apt-get install -y wget make gcc && \
+  rm -rf /var/lib/apt/lists/*
 
 # Install Redis.
 RUN \
